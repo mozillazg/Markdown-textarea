@@ -2,7 +2,7 @@
 // @name            Markdown textarea
 // @namespace       http://userscripts.org/scripts/show/91369
 // @description     Add Markdown convert button to textarea
-// @version         0.9.3
+// @version         0.9.4
 // @author          mozillazg
 // @updateURL       https://userscripts.org/scripts/source/91369.meta.js
 // @downloadURL     https://userscripts.org/scripts/source/91369.user.js
@@ -22,11 +22,16 @@ window.addEventListener(
         for (var i = 0; i < textareas.length; i++) {
             var textarea = textareas[i];
             var textarea_style = getComputedStyle(textarea, "" );
+            var width = parseFloat(textarea_style.width);
+            var left = parseFloat(textarea_style.left);
             if (textarea_style.display != "none"
                  && textarea_style.visibility != "hidden"
                  && textarea_style.height != "0px"
                  && textarea.getAttribute("readonly") == null
-                 && textarea.getAttribute("disabled") == null) {
+                 && textarea.getAttribute("disabled") == null
+                 && (!((isNaN(left) != true) && (left < 0)
+                     && Math.abs(left) > width))
+                ) {
                 div = document.createElement('div');
                 button = document.createElement('button');
                 button.setAttribute('type', 'button')
