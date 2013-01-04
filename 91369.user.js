@@ -2,13 +2,14 @@
 // @name            Markdown textarea
 // @namespace       http://userscripts.org/scripts/show/91369
 // @description     Add Markdown convert button to textarea
-// @version         0.9.4
+// @version         0.9.5
 // @author          mozillazg
 // @updateURL       https://userscripts.org/scripts/source/91369.meta.js
 // @downloadURL     https://userscripts.org/scripts/source/91369.user.js
 // @run-at          document-end
 // @include         *
 // @exclude         http://*.tudou.com/*
+// @exclude         http://www.codecademy.com/courses/*
 // @grant           none
 // @icon            https://github.com/mozillazg/my-blog-file/raw/master/imgs/markdown-textarea.png
 // ==/UserScript==
